@@ -23,3 +23,5 @@ rootProject.name = "ComposeRestaurantsApps"
 include ':app'
 include ':restaurantappviewmodel'
 include ':restaurant_app_retrofit'
+include ':restaurant_app_coroutines'
+include ':restaurant_app_navigation'
