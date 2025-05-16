@@ -56,7 +56,7 @@ fun RestaurantItem(item: Restaurant, onFavoriteClick: (id: Int) -> Unit, onItemC
         elevation = CardDefaults.elevatedCardElevation(4.dp),
         modifier = Modifier
             .padding(8.dp)
-            .clickable { onItemClick(item.id) }
+            .clickable { onItemClick(item.id) },
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
