@@ -35,6 +35,8 @@ navigationCompose = "2.8.0"
 navigationComposeVersion = "2.4.2"
 retrofit = "2.11.0"
 retrofitVersion = "2.8.0"
+roomCompiler = "2.4.2"
+roomKtx = "2.4.2"
 roomRuntime = "2.7.1"
 roomRuntimeVersion = "2.7.1"
 material3Android = "1.3.2"
@@ -60,7 +62,10 @@ androidx-lifecycle-viewmodel-compose-v290 = { module = "androidx.lifecycle:lifec
 androidx-navigation-compose = { module = "androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
 androidx-navigation-compose-v242 = { module = "androidx.navigation:navigation-compose", version.ref = "navigationComposeVersion" }
 androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
+androidx-room-compiler-v242 = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
 androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomRuntimeVersion" }
+androidx-room-ktx-v242 = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 compiler = { module = "android.arch.persistence.room:compiler", version.ref = "compiler" }
 converter-gson = { module = "com.squareup.retrofit2:converter-gson", version.ref = "converterGson" }

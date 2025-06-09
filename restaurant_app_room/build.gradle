@@ -2,14 +2,15 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace 'com.example.restaurant_app_coroutines'
+    namespace 'com.example.restaurant_app_room'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.example.restaurant_app_coroutines"
+        applicationId "com.example.restaurant_app_room"
         minSdk 25
         targetSdk 35
         versionCode 1
@@ -47,7 +48,6 @@ dependencies {
     implementation libs.androidx.ui.tooling.preview
     implementation libs.androidx.material3
     implementation libs.androidx.compose.material
-    implementation libs.androidx.lifecycle.viewmodel.compose.v241
     testImplementation libs.junit
     androidTestImplementation libs.androidx.junit.v115
     androidTestImplementation libs.androidx.espresso.core.v351
@@ -55,7 +55,10 @@ dependencies {
     androidTestImplementation libs.androidx.ui.test.junit4
     debugImplementation libs.androidx.ui.tooling
     debugImplementation libs.androidx.ui.test.manifest
-    implementation libs.androidx.lifecycle.viewmodel.compose.v290
+    implementation libs.androidx.navigation.compose.v242
+    implementation libs.androidx.room.runtime
+    ksp libs.androidx.room.compiler.v242
+    implementation libs.androidx.room.ktx.v242
     implementation libs.retrofit.v290
     implementation libs.gson.v286
     implementation libs.converter.gson.v290
