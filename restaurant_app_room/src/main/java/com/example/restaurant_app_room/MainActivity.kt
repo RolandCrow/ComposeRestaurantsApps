@@ -16,26 +16,26 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ComposeRestaurantsAppsTheme {
-                RestaurantsApp()
+                RestaurantApp()
             }
         }
     }
 }
 
 @Composable
-private fun RestaurantsApp() {
+private fun RestaurantApp() {
     val navController = rememberNavController()
-    NavHost(navController = navController, startDestination = "restaurants") {
+    NavHost(navController, startDestination = "restaurants") {
         composable(route = "restaurants") {
-            RestaurantsScreen { id->
-                navController.navigate("restaurants/$id")
-            }
+            RestaurantsScreen { id -> navController.navigate("restaurants/$id") }
         }
         composable(
             route = "restaurants/{restaurant_id}",
             arguments = listOf(navArgument("restaurant_id") {
                 type = NavType.IntType
-            })
-        ) { RestaurantDetailsScreen() }
+            }),
+        ) {
+            RestaurantDetailsScreen()
+        }
     }
 }
