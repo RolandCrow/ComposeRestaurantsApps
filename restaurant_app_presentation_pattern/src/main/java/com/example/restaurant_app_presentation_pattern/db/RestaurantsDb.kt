@@ -1,16 +1,17 @@
-package com.example.restaurant_app_room.bd
+package com.example.restaurant_app_presentation_pattern.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.restaurant_app_presentation_pattern.model.Restaurant
 
 @Database(
     entities = [Restaurant::class],
     version = 2,
     exportSchema = false
 )
-abstract class RestaurantsDb : RoomDatabase() {
+abstract class RestaurantsDb: RoomDatabase() {
     abstract val dao: RestaurantsDao
 
     companion object {
@@ -20,7 +21,7 @@ abstract class RestaurantsDb : RoomDatabase() {
         fun getDaoInstance(context: Context): RestaurantsDao {
             synchronized(this) {
                 var instance = INSTANCE
-                if (instance == null) {
+                if(instance == null) {
                     instance = buildDatabase(context).dao
                     INSTANCE = instance
                 }
@@ -32,8 +33,8 @@ abstract class RestaurantsDb : RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 RestaurantsDb::class.java,
-                "restaurants_database")
-                .fallbackToDestructiveMigration()
+                "restaurants_database"
+            ).fallbackToDestructiveMigration()
                 .build()
     }
 }

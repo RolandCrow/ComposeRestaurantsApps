@@ -1,4 +1,4 @@
-package com.example.restaurant_app_room.bd
+package com.example.restaurant_app_room.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

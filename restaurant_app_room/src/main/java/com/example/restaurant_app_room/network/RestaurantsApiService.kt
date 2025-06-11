@@ -1,6 +1,6 @@
 package com.example.restaurant_app_room.network
 
-import com.example.restaurant_app_room.bd.Restaurant
+import com.example.restaurant_app_room.db.Restaurant
 import retrofit2.http.GET
 import retrofit2.http.Query
 

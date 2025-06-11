@@ -4,9 +4,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.restaurant_app_room.RestaurantsApplication
-import com.example.restaurant_app_room.bd.PartialRestaurant
-import com.example.restaurant_app_room.bd.Restaurant
-import com.example.restaurant_app_room.bd.RestaurantsDb
+import com.example.restaurant_app_room.db.PartialRestaurant
+import com.example.restaurant_app_room.db.Restaurant
+import com.example.restaurant_app_room.db.RestaurantsDb
 import com.example.restaurant_app_room.network.RestaurantsApiService
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers

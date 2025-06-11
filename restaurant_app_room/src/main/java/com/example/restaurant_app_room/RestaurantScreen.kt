@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.wear.compose.material.ContentAlpha
 import androidx.wear.compose.material.LocalContentAlpha
-import com.example.restaurant_app_room.bd.Restaurant
+import com.example.restaurant_app_room.db.Restaurant
 import com.example.restaurant_app_room.viewmodel.RestaurantsViewModel
 import androidx.compose.foundation.lazy.items
 
