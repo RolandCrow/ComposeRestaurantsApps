@@ -11,6 +11,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/restaurant_app_clean_architecture" />
             <option value="$PROJECT_DIR$/restaurant_app_coroutines" />
             <option value="$PROJECT_DIR$/restaurant_app_navigation" />
             <option value="$PROJECT_DIR$/restaurant_app_presentation_pattern" />
