@@ -126,5 +126,4 @@ fun RestaurantDetails(
             )
         }
     }
-
 }
