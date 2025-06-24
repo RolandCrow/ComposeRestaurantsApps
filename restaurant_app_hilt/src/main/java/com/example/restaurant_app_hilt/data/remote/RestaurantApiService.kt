@@ -4,7 +4,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface RestaurantApiService {
-    @GET("restaurant.json")
+    @GET("restaurants.json")
     suspend fun getRestaurants(): List<RemoteRestaurant>
 
     @GET("restaurant.json?orderBy=\"r_id\"")

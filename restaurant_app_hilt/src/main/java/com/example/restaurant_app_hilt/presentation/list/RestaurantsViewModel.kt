@@ -1,4 +1,4 @@
-package com.example.restaurant_app_hilt.presentation
+package com.example.restaurant_app_hilt.presentation.list
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.restaurant_app_hilt.domain.GetInitialRestaurantsUseCase
 import com.example.restaurant_app_hilt.domain.ToggleRestaurantUseCase
-import com.example.restaurant_app_hilt.presentation.list.RestaurantsScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.launch
@@ -26,12 +25,13 @@ class RestaurantsViewModel @Inject constructor(
     val state: State<RestaurantsScreenState>
         get() = _state
 
-    init {
-        getRestaurants()
-    }
     private val errorHandler = CoroutineExceptionHandler { _, exception ->
         exception.printStackTrace()
         _state.value = _state.value.copy(error = exception.message, isLoading = false)
+    }
+
+    init {
+        getRestaurants()
     }
 
     fun toggleFavorite(id: Int, oldValue: Boolean) {
@@ -47,10 +47,10 @@ class RestaurantsViewModel @Inject constructor(
             val restaurants = getRestaurantsUseCase()
             _state.value = _state.value.copy(
                 restaurants = restaurants,
-                isLoading = false
-            )
+                isLoading = false)
         }
     }
+
 
 
 }

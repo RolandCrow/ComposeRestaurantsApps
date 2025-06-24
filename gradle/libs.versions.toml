@@ -14,7 +14,7 @@ coreKtxVersion = "1.8.0"
 espressoCoreVersion = "3.6.1"
 gson = "2.11.0"
 gsonVersion = "2.8.6"
-hiltAndroid = "2.40.5"
+hiltAndroid = "2.51.1"
 hiltNavigationCompose = "1.0.0"
 kotlin = "2.0.21"
 coreKtx = "1.8.0"
@@ -34,7 +34,7 @@ lifecycleViewmodelComposeVersion = "2.4.1"
 material = "1.12.0"
 constraintlayout = "2.2.1"
 navigationCompose = "2.8.0"
-navigationComposeVersion = "2.4.2"
+navigationComposeVersion = "2.5.1"
 retrofit = "2.11.0"
 retrofitVersion = "2.8.0"
 roomCompiler = "2.4.2"
@@ -46,6 +46,7 @@ runtime = "1.1.1"
 runtimeLivedata = "1.8.1"
 adsMobileSdk = "0.15.1-alpha01"
 composeMaterial = "1.4.1"
+ksp = "2.0.21-1.0.25"
 
 [libraries]
 androidx-activity-compose-v151 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
@@ -114,4 +115,6 @@ androidx-compose-material = { group = "androidx.wear.compose", name = "compose-m
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+googleDevtoolsKsp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hiltAndroid = { id = "com.google.dagger.hilt.android", version.ref = "hiltAndroid" }
 
