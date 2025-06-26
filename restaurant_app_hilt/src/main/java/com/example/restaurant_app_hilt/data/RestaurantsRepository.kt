@@ -1,11 +1,12 @@
 package com.example.restaurant_app_hilt.data
 
+import com.example.restaurant_app_hilt.data.di.IoDispatcher
 import com.example.restaurant_app_hilt.data.local.LocalRestaurant
 import com.example.restaurant_app_hilt.data.local.PartialLocalRestaurant
 import com.example.restaurant_app_hilt.data.local.RestaurantsDao
-import com.example.restaurant_app_hilt.data.remote.RestaurantApiService
+import com.example.restaurant_app_hilt.data.remote.RestaurantsApiService
 import com.example.restaurant_app_hilt.domain.Restaurant
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
 import java.net.ConnectException
@@ -15,21 +16,22 @@ import javax.inject.Singleton
 
 @Singleton
 class RestaurantsRepository @Inject constructor(
-    private val restInterface: RestaurantApiService,
-    private val restaurantsDao: RestaurantsDao
+    private val restInterface: RestaurantsApiService,
+    private val restaurantsDao: RestaurantsDao,
+    @IoDispatcher private val dispatcher: CoroutineDispatcher
 ) {
 
     suspend fun toggleFavoriteRestaurant(
         id: Int,
         value: Boolean
-    ) = withContext(Dispatchers.IO) {
+    ) = withContext(dispatcher) {
         restaurantsDao.update(
             PartialLocalRestaurant(id, isFavorite = value)
         )
     }
 
     suspend fun getRestaurants(): List<Restaurant> {
-        return withContext(Dispatchers.IO) {
+        return withContext(dispatcher) {
             return@withContext restaurantsDao.getAll().map {
                 Restaurant(it.id,it.title,it.description, it.isFavorable)
             }
@@ -37,7 +39,7 @@ class RestaurantsRepository @Inject constructor(
     }
 
     suspend fun loadRestaurants() {
-        return withContext(Dispatchers.IO) {
+        return withContext(dispatcher) {
             try {
                 refreshCache()
             } catch (e: Exception) {

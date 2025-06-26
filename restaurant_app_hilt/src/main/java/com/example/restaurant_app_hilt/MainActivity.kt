@@ -36,19 +36,18 @@ private fun RestaurantsApp() {
             val viewModel: RestaurantsViewModel = hiltViewModel()
             RestaurantsScreen(
                 state = viewModel.state.value,
-                onItemClick = { id->
+                onItemClick = { id ->
                     navController.navigate("restaurants/$id")
                 },
                 onFavoriteClick = { id, oldValue ->
-                    viewModel.toggleFavorite(id,oldValue)
-                }
-            )
+                    viewModel.toggleFavorite(id, oldValue)
+                })
         }
         composable(
             route = "restaurants/{restaurant_id}",
             arguments = listOf(navArgument("restaurant_id") {
                 type = NavType.IntType
-            })
+            }),
         ) {
             RestaurantDetailsScreen()
         }

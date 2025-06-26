@@ -69,4 +69,7 @@ dependencies {
     implementation (libs.hilt.android)
     ksp (libs.hilt.compiler)
     implementation (libs.androidx.hilt.navigation.compose)
+    androidTestImplementation (libs.androidx.compose.ui.ui.test.junit4)
+    debugImplementation (libs.androidx.compose.ui.ui.test.manifest)
+    testImplementation (libs.kotlinx.coroutines.test)
 }

@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import com.example.restaurant_app_hilt.data.local.RestaurantsDao
 import com.example.restaurant_app_hilt.data.local.RestaurantsDb
-import com.example.restaurant_app_hilt.data.remote.RestaurantApiService
+import com.example.restaurant_app_hilt.data.remote.RestaurantsApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -43,7 +43,7 @@ object RestaurantsModule {
     }
 
     @Provides
-    fun providesRetrofitApi(retrofit: Retrofit): RestaurantApiService {
-        return retrofit.create(RestaurantApiService::class.java)
+    fun provideRetrofitApi(retrofit: Retrofit): RestaurantsApiService {
+        return retrofit.create(RestaurantsApiService::class.java)
     }
  }
